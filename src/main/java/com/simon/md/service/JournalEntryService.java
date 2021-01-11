@@ -8,7 +8,7 @@ public interface JournalEntryService {
 	
 	String SERVICE_NAME = "journalEntry";
 	
-	public JournalEntry findJournelEntryById(String id);
+	public JournalEntry findJournalEntryById(String id);
 	public List<JournalEntry> getAllEntriesByUsername(String userName);
 	public String saveJournalEntry(JournalEntry je);
 	public String updateJournalEntry(JournalEntry je);

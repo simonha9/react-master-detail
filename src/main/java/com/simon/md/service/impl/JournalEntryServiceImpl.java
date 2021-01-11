@@ -27,7 +27,7 @@ public class JournalEntryServiceImpl implements JournalEntryService {
 	@Autowired
 	MongoTemplate mgt;
 	
-	public JournalEntry findJournelEntryById(String id) {
+	public JournalEntry findJournalEntryById(String id) {
 		return jeRepo.findById(id).get();
 	}
 
