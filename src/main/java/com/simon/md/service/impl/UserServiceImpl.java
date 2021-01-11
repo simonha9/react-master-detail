@@ -1,4 +1,4 @@
-package com.simon.md.service;
+package com.simon.md.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.simon.md.domain.User;
 import com.simon.md.repository.UserRepository;
+import com.simon.md.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
