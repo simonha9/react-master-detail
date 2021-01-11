@@ -17,6 +17,8 @@ import com.mongodb.client.MongoClients;
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
 	public static String dbName = "md-users";
+	public static String dbName2 = "Journals";
+	public static String db2CollectionName = "journal-entries";
 
 	@Override
 	protected String getDatabaseName() {
