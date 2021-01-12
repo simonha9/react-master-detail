@@ -1,7 +1,13 @@
-D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\controller\UserController.java
 D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\MongoConfig.java
-D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\App.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\service\impl\JournalEntryServiceImpl.java
 D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\service\UserService.java
-D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\domain\User.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\domain\Journal.java
 D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\repository\UserRepository.java
-D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\service\UserServiceImpl.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\controller\JournalController.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\service\impl\UserServiceImpl.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\repository\JournalEntryRepository.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\service\JournalEntryService.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\controller\UserController.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\domain\JournalEntry.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\App.java
+D:\Appsrc\Git\Projects\react-master-detail\src\main\java\com\simon\md\domain\User.java

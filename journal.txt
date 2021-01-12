@@ -1,0 +1,13 @@
+Gratitoad
+
+Journal entry
+- username
+- title
+- content
+
+Services: 
+- create journal entry (requires all 3)
+- update journal entry (just gets id from clickable)
+- delete journal entry (same)
+- read get by id
+- get all entries by username
