@@ -1,5 +1,6 @@
 package com.simon.md.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public class JournalController {
 	}
 	
 	@GetMapping("/{userName}")
-	public List<JournalEntry> getAllEntriesByUsername(@PathVariable("userName") String userName) {
+	public List<JournalEntry> getAllEntriesByUsername(@PathVariable("userName") String userName) throws ParseException {
 		return jeService.getAllEntriesByUsername(userName);
 	}
 	
