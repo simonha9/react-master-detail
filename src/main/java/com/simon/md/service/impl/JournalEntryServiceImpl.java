@@ -1,10 +1,13 @@
 package com.simon.md.service.impl;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -31,14 +34,13 @@ public class JournalEntryServiceImpl implements JournalEntryService {
 		return jeRepo.findById(id).get();
 	}
 
-	public List<JournalEntry> getAllEntriesByUsername(String userName) {
+	public List<JournalEntry> getAllEntriesByUsername(String userName) throws ParseException {
 		MongoCollection col = mgt.getDb().getCollection(MongoConfig.db2CollectionName);
 		List<JournalEntry> entries = new ArrayList<>();
-		BasicDBObject sortObj = new BasicDBObject();
-		Bson sort = new BasicDBObject("title", 1);
-		List<Document> docs = (List<Document>) col.find(Filters.regex("userName", userName)).sort(sort)
-				.into(new ArrayList<Document>());
-		
+		BasicDBObject whereQuery = new BasicDBObject();
+		whereQuery.put("userName", userName);
+		List<Document> docs = (List<Document>) col.find(Filters.eq("userName", userName)).into(new ArrayList<Document>());
+		System.out.print(docs.size());
 		if (!docs.isEmpty()) {
 			for (Document doc : docs) {
 				JournalEntry je = buildEntryFromDoc(doc);
@@ -48,13 +50,15 @@ public class JournalEntryServiceImpl implements JournalEntryService {
 		return entries;
 	}
 	
-	private JournalEntry buildEntryFromDoc(Document doc) {
+	private JournalEntry buildEntryFromDoc(Document doc) throws ParseException {
 		JournalEntry je = new JournalEntry();
 		je.setContent(doc.getString("content"));
 		ObjectId docId = doc.getObjectId("_id");
 		je.setId(doc.getObjectId("_id").toString());
 		je.setTitle(doc.getString("title"));
 		je.setUserName(doc.getString("userName"));
+		je.setDate(doc.getDate("date"));
+		
 		return je;
 	}
 
