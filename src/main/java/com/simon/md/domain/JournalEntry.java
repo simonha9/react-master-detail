@@ -1,5 +1,7 @@
 package com.simon.md.domain;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 
 public class JournalEntry {
@@ -10,6 +12,8 @@ public class JournalEntry {
 	public String userName;
 	public String title;
 	public String content;
+	public Date date;
+	
 	public String getId() {
 		return id;
 	}
@@ -34,6 +38,13 @@ public class JournalEntry {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	
 	
 	
