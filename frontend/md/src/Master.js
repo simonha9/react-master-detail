@@ -2,6 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import './Master.css';
 import Detail from './Detail';
+import {Button, Table} from 'react-bootstrap';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import Create from './Create';
 
 export default class Master extends React.Component {
     constructor(props) {
@@ -52,8 +60,24 @@ export default class Master extends React.Component {
 
         return (
             <div className='root'> 
+            <Router>
+                <Link to="/create">
+                    <Button id="lightbutton" variant="light" >New Entry</Button>   
+                </Link>
+                
+
+                {/*Switch looks through children Routes and renders the first one that matches current URL*/}
+                <Switch>
+                <Route path="/create">
+                    <Create />
+                </Route>
+                </Switch>
+            </Router>
+                
+            
+            
                 <div className='master'>
-                    <table className='tabletable' id='tabletable'>
+                    <Table striped bordered hover>
                         <thead>
                             <td>Username</td>
                             <td>Title</td>
@@ -62,7 +86,7 @@ export default class Master extends React.Component {
                         <tbody>
                             {rows}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
                 <div className='detail'>
                     <Detail value={this.currentId}/>
@@ -72,3 +96,4 @@ export default class Master extends React.Component {
     }
     
 }
+
