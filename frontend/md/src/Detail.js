@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import axios from 'axios';
+import {Card} from 'react-bootstrap';
 
 export default class Detail extends React.Component {
 
@@ -42,12 +43,12 @@ export default class Detail extends React.Component {
         
         return (
             <Fragment>
-                <h4>Current selected for user: {this.state.userName}</h4>
-                <ul>
-                    <li>Title: {this.state.title}</li>
-                    <li>Content: {this.state.content}</li>
-                    <li>Date: {this.state.date}</li>
-                </ul>
+                <Card style={{ width: '25rem' }}>
+                    <Card.Header>Current selected for user: {this.state.userName}</Card.Header>
+                    <Card.Title>{this.state.title}</Card.Title>
+                    <Card.Subtitle>{this.state.date}</Card.Subtitle>
+                    <Card.Text>{this.state.content}</Card.Text>
+                </Card>
             </Fragment>
         )
     }
