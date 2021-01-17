@@ -7,7 +7,7 @@ import Master from './Master';
 function App() {
   return (
     <Fragment>
-    <h1>Journal Entries</h1>
+    <h1 class="journal-header" id="journal-header">Journal Entries</h1>
     <Master />
     </Fragment>
   );
